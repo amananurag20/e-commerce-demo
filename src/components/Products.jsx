@@ -15,7 +15,7 @@ function Products() {
             });
     }, []);
 
-    const isInCart = (product) => cart.some(item => item.id === product.id); // use callback hook
+    const isInCart = (product) => cart.some(item => item.id === product.id); // useCallback hook
 
     if (loading) return <p>Loading...</p>;
 

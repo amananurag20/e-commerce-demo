@@ -16,10 +16,10 @@ function App() {
         </Link>
 
       </header>
-
+      
       <Routes>
         <Route path="/" element={<Products />} />
-        <Route path="/cart" element={<CartPage />} /> {/* 🆕 Cart Page */}
+        <Route path="/cart" element={<CartPage />} /> 
       </Routes>
     </>
   );
