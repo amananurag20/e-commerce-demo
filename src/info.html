@@ -1,0 +1,18 @@
+CartContext.jsx : It's like creating a basket that all your pages (Home, Cart, etc.) can use and share together — without passing the basket from hand to hand.
+import {createContext, useState} from 'react;   //createContext- to make a global basket, useState- to store items in that basket
+
+export const cartContext = createContext(); //created the cart box (context) which other files can use.
+
+export function CartProvider({children}){    //func used to wrap entire app to manage cart
+    const [cartItems, setCartItems] = useState([]); 
+
+    const addToCart=(item)=>{               //func used to add item in cart
+        setCartItems((prev)=>[...prev, item]);   //prev- previous item in the cart 
+    };                                          //[...prev, item] used to add new item keeping old one
+
+    return(
+        <CartContext.Provider value={{cartItems, addToCart}}> //CC.P make data avilable globally
+        {children}
+        </CartContext.Provider>
+    )
+}
